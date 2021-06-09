@@ -1,4 +1,6 @@
 import React from "react";
+
+import NewExpense from "./components/newExpense/NewExpense";
 import Expenses from "./components/expenses/Expenses";
 
 const App = () => {
@@ -23,9 +25,15 @@ const App = () => {
       date: new Date(2021, 5, 12)
     }
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("app.js");
+    console.log(expense);
+  };
+
   return (
     <div>
-      <h2>Expense Tracker</h2>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
